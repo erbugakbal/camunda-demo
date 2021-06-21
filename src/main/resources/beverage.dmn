@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1ljskyp" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.4.1">
+  <decision id="decideOnBeverage" name="Beverage">
+    <extensionElements>
+      <biodi:bounds x="150" y="150" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" label="Name of Recipient">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>nameOfRecipient</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0sodqvj">
+          <text>"Ahmet","Mehmet","Aylin","Ezgi"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1vvuzdo" label="Time of Day">
+        <inputExpression id="LiteralExpression_19llhjd" typeRef="string">
+          <text>timeOfDay</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0dett2a">
+          <text>"Morning","Afternoon","Evening","Night"</text>
+        </inputValues>
+      </input>
+      <output id="output_1" label="Drink" name="drink" typeRef="string" />
+      <rule id="DecisionRule_1yb3xno">
+        <inputEntry id="UnaryTests_1f4onuq">
+          <text>"Ahmet","Mehmet"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vpdqvj">
+          <text>"Morning"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kxunls">
+          <text>"Latte"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pqe9i4">
+        <inputEntry id="UnaryTests_1sukpmd">
+          <text>"Aylin"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jdz9dv">
+          <text>"Night"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1s4rg4v">
+          <text>"Americano"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16k0bth">
+        <inputEntry id="UnaryTests_1rwapmu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vkd6lk">
+          <text>"Afternoon","Evening"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ayzj65">
+          <text>"Tea"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tiuqru">
+        <inputEntry id="UnaryTests_0xoosqf">
+          <text>"Ezgi"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pdvuw8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nlq8ax">
+          <text>"Orange Juice"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_049qb2w">
+        <inputEntry id="UnaryTests_0xvj135">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ns3365">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tccw2q">
+          <text>"Water"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fs7xdr">
+        <inputEntry id="UnaryTests_058lxbk">
+          <text>"Aylin","Ezgi"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02b4t8e">
+          <text>"Morning"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tms47n">
+          <text>"Lemon Juice"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
